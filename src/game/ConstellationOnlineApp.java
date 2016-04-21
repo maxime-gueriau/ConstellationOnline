@@ -12,7 +12,7 @@ import game.viewer.swing.JavaSwingFrame;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 /**
- * @author Maxime and Junior
+ * @author Maxime
  *
  */
 public class ConstellationOnlineApp {
