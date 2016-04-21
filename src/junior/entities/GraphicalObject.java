@@ -1,3 +1,4 @@
+package junior.entities;
 import java.awt.Graphics;
 
 public interface GraphicalObject {

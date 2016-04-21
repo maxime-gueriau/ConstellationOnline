@@ -1,3 +1,5 @@
+/*package junior.player;
+import junior.engine.Game;
 
 public class Player {
 	
@@ -78,3 +80,4 @@ public class Player {
 	
 
 }
+*/

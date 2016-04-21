@@ -1,3 +1,4 @@
+package junior.entities;
 import java.awt.Polygon;
 
 public abstract class PhysicalObject implements GraphicalObject{

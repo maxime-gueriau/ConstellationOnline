@@ -1,8 +1,12 @@
+/*package game.viewer.swing;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
+import junior.engine.Game;
+import junior.player.Player;
 
 public class HUD{
 	
@@ -108,4 +112,4 @@ public class HUD{
 	
 	
 
-}
+}*/

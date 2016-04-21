@@ -1,8 +1,11 @@
+/*package junior.ui;
 import java.awt.Canvas;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 
 import javax.swing.JFrame;
+
+import junior.engine.Game;
 
 public class Fenetre extends Canvas{
 
@@ -10,15 +13,19 @@ public class Fenetre extends Canvas{
 	
 	private JFrame frame;
 	
+	
+	
 	public Fenetre(String title, Game game){
 		frame = new JFrame(title);
 		
 		//Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 		//System.out.println(screenSize);
 		
-		frame.setPreferredSize(new Dimension(1920,1200));
-		frame.setMaximumSize(new Dimension(1920, 1200));
-		frame.setMinimumSize(new Dimension(1920,1200));
+		
+		
+		frame.setPreferredSize(new Dimension(WIDTH,HEIGHT));
+		frame.setMaximumSize(new Dimension(WIDTH, HEIGHT));
+		frame.setMinimumSize(new Dimension(WIDTH,HEIGHT));
 		
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setResizable(false);
@@ -40,3 +47,4 @@ public class Fenetre extends Canvas{
 	
 
 }
+*/

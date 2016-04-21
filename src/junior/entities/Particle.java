@@ -1,31 +1,28 @@
+/*package junior.entities;
 import java.awt.Color;
-import java.awt.Font;
 import java.awt.Graphics;
 
-public class PopUpMessage extends GhostObject{
+import junior.engine.Handler;
+
+public class Particle extends GhostObject{
 	
 	private double dx, dy, x, y;
 	private Color color;
 	private int frameLeft, totalFrames;
-	private String message;
-	private int red, green, blue;
 	
 	Handler handler;
 	
-	public PopUpMessage(String message, double x, double  y, double dx, double dy, int frameLeft, Handler handler, int red, int green, int blue){
+	public Particle(double x, double  y, double dx, double dy, int frameLeft, Handler handler){
 		this.x = x;
 		this.y = y;
 		this.dx = dx;
 		this.dy = dy;
-		this.message = message;
+		
 		this.frameLeft = frameLeft;
 		this.totalFrames = frameLeft;
 		
 		this.color = color;
 		this.handler = handler;
-		this.red = red;
-		this.green = green;
-		this.blue = blue;
 	}
 	
 	
@@ -44,10 +41,10 @@ public class PopUpMessage extends GhostObject{
 	}
 	
 	public void render(Graphics g){
-		g.setFont(new Font("Airstrike", Font.BOLD, 20));
-		g.setColor(new Color(this.red , this.green , this.blue, (int)(255*frameLeft/totalFrames)));
+		g.setColor(new Color(255 , 255 , 0, (int)(255*frameLeft/totalFrames)));
 		
-		g.drawString(this.message, (int)x, (int)y);
+		g.fillOval((int)x, (int)y, (int)(20*(1-(double)frameLeft/(double)totalFrames))+1, (int)(20*(1-(double)frameLeft/(double)totalFrames))+1);
 	}
 
 }
+*/
