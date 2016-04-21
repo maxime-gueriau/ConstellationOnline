@@ -1,3 +1,4 @@
+/*package junior.entities;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -11,6 +12,9 @@ import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import javax.sound.sampled.DataLine;
+
+import junior.engine.Game;
+import junior.engine.Handler;
 
 public class LaserShot extends PhysicalObject{
 
@@ -123,3 +127,4 @@ public class LaserShot extends PhysicalObject{
 	
 
 }
+*/

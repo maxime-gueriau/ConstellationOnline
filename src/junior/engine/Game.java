@@ -1,3 +1,4 @@
+/*package junior.engine;
 import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Graphics;
@@ -9,33 +10,29 @@ import java.io.File;
 
 import javax.swing.ImageIcon;
 
+import game.engine.entities.instances.BasicCannon;
+import game.viewer.swing.HUD;
+import junior.entities.Spaceship;
+import junior.player.Player;
+import junior.ui.Fenetre;
+
 public class Game extends Canvas implements Runnable{
 
 	Thread thread;
 
 	private static final long serialVersionUID = 4867550966953749649L;
 
-	public static boolean running = false;
-	
-	public boolean isDebugMode;
-
-	public static final int WIDTH =  (int)Toolkit.getDefaultToolkit().getScreenSize().getWidth(), HEIGHT = (int)Toolkit.getDefaultToolkit().getScreenSize().getHeight();
-
-	public double fpsWanted = 120.0;
-
 	public  Handler handler = null;
 
 	public final Fenetre fenetre;
 
-	public  HUD hud = null;
+	
 
-	public Image image;
-
+	
 
 
 	public Game(){
-		ImageIcon ii = new ImageIcon(this.getClass().getClassLoader().getResource("Deep_Space.jpg"));
-		image = ii.getImage();
+		
 
 		fenetre = new Fenetre("TankCasio V0 alpha", this);
 		handler = new Handler(this);
@@ -46,19 +43,12 @@ public class Game extends Canvas implements Runnable{
 		hud = new HUD(player1, this);
 
 		handler.addPhysicalObject(vaisseauJoueur1);
-		handler.addPhysicalObject(new BasicCannon(300,300, 100, handler, vaisseauJoueur1, this));
-		handler.addPhysicalObject(new BasicCannon(800,800, 100, handler, vaisseauJoueur1,this));
-		handler.addPhysicalObject(new BasicCannon(1500,200, 100, handler, vaisseauJoueur1,this));
+	
 		//handler.addObject(new Particle(500, 500 + 30, -1, 0, Color.YELLOW, 1000, handler));
 		
 		isDebugMode = false;
 
-		start();
-	}
-
-	public static void main(String[] args){
-		new Game();
-		System.out.println(WIDTH +  "," +  HEIGHT);
+		//start();
 	}
 
 	public void start(){
@@ -102,7 +92,7 @@ public class Game extends Canvas implements Runnable{
 				frames = 0;
 			}
 		}
-		stop();
+		this.stop();
 	}
 
 
@@ -156,7 +146,5 @@ public class Game extends Canvas implements Runnable{
 
 
 
-
-
-
 }
+*/

@@ -1,3 +1,4 @@
+/*package junior.entities;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
@@ -7,6 +8,12 @@ import java.awt.Polygon;
 import java.awt.event.KeyEvent;
 
 import javax.swing.ImageIcon;
+
+import junior.engine.Game;
+import junior.engine.Handler;
+import junior.player.Player;
+import junior.ui.PopUpMessage;
+import junior.ui.SpaceshipeJPanel;
 
 public class Spaceship extends PhysicalObject{
 
@@ -226,4 +233,4 @@ public class Spaceship extends PhysicalObject{
 		handler.addGhostObject(new PopUpMessage(message, x - (double)message.length()/2 * 8 , y - this.height/2, 0, -2, 120, this.handler, 255, 0 , 0));
 	}
 
-}
+}*/
