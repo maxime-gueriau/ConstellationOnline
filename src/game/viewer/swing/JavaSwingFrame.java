@@ -51,15 +51,14 @@ public class JavaSwingFrame extends GameView {
 
 		this.frame.add(this.mainView);
 		
-		this.mainView.requestFocus();
-		
 		ImageIcon ii = new ImageIcon(this.getClass().getClassLoader().getResource("Deep_Space.jpg"));
 		this.backgroundImage = ii.getImage();
-		
 		
 		//hud = new HUD(player1, this);
 		
 		this.frame.setVisible(true);
+		
+		this.mainView.requestFocus();
 			
 	}
 

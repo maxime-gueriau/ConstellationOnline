@@ -28,8 +28,6 @@ public class KeyboardController extends GameController implements KeyListener {
 	@Override
 	public void keyPressed(KeyEvent e) {
 		
-		//
-		
 		if(e.getKeyCode() == KeyEvent.VK_Z)
 	    {
 	      	this.controlledEntity.setAcceleration(1000);

@@ -8,7 +8,9 @@ import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
+import java.awt.color.ColorSpace;
 import java.awt.image.BufferStrategy;
+import java.awt.image.BufferedImage;
 
 import javax.swing.ImageIcon;
 
@@ -29,6 +31,7 @@ public class JavaSwingRenderer extends Renderer {
 	private Image backgroundImage;
 	
 	private Graphics graphics;
+	private BufferedImage bufferedImage;
 	
 	public JavaSwingRenderer(JavaSwingView mainView, Camera camera) {
 		super(camera);
@@ -45,22 +48,26 @@ public class JavaSwingRenderer extends Renderer {
 		
 		//System.out.println(this.mainView);
 		
-		BufferStrategy bs = this.mainView.getBufferStrategy();
-		if(bs==null){
-			mainView.createBufferStrategy(3);
-			bs = this.mainView.getBufferStrategy();
-		}
+		this.bufferedImage = new BufferedImage(this.mainView.getWidth(), this.mainView.getHeight(), ColorSpace.TYPE_RGB );
+			
+//      BufferStrategy bs = this.mainView.getBufferStrategy();
+//		if(bs==null){
+//			mainView.createBufferStrategy(2);
+//			bs = this.mainView.getBufferStrategy();
+//		}
 		
-		this.graphics = bs.getDrawGraphics();
+//		this.graphics = bs.getDrawGraphics();
 
+		this.graphics = this.bufferedImage.getGraphics();
+		
 		// on dessine le fond
 		this.graphics.setColor(Color.BLACK);
-		this.graphics.fillRect(0, 0, mainView.getWidth(), mainView.getHeight());
+		this.graphics.fillRect(0, 0, bufferedImage.getWidth(), bufferedImage.getHeight());
 
 		//System.out.println(mainView.getWidth());
 		
 		Graphics2D g2d = (Graphics2D)this.graphics;
-		g2d.drawImage(backgroundImage, 0, 0 , mainView.getWidth(), mainView.getHeight(),null);
+		g2d.drawImage(backgroundImage, 0, 0 , bufferedImage.getWidth(), bufferedImage.getHeight(),null);
 
 	
 
@@ -90,8 +97,8 @@ public class JavaSwingRenderer extends Renderer {
 		Graphics2D g2d = (Graphics2D)g;
 		g2d.setColor(laserShot.getColor());
 	
-		final double laserShotX = laserShot.getX() - this.camera.getX() + this.mainView.getWidth()/2.0;
-		final double laserShotY = laserShot.getY() - this.camera.getY() + this.mainView.getHeight()/2.0;	
+		final double laserShotX = laserShot.getX() - this.camera.getX() + this.bufferedImage.getWidth()/2.0;
+		final double laserShotY = laserShot.getY() - this.camera.getY() + this.bufferedImage.getHeight()/2.0;	
 		
 		g2d.translate(laserShotX , laserShotY );
 		g2d.rotate(Math.toRadians(laserShot.getAngle()));
@@ -122,8 +129,8 @@ public class JavaSwingRenderer extends Renderer {
 		
 		//g2d.scale(this.camera.getZoom(), this.camera.getZoom());
 		
-		final double spaceShipX = spaceShip.getX() - this.camera.getX() + this.mainView.getWidth()/2.0;
-		final double spaceShipY = spaceShip.getY() - this.camera.getY() + this.mainView.getHeight()/2.0;
+		final double spaceShipX = spaceShip.getX() - this.camera.getX() + this.bufferedImage.getWidth()/2.0;
+		final double spaceShipY = spaceShip.getY() - this.camera.getY() + this.bufferedImage.getHeight()/2.0;
 		
 		
 		//g2d.translate(x + (int)(width/2), y + (int)(height/2));
@@ -156,8 +163,8 @@ public class JavaSwingRenderer extends Renderer {
 		
 		g.setColor(Color.WHITE);
 		
-		final double cannonX = basicCannon.getX() - this.camera.getX() + this.mainView.getWidth()/2.0;
-		final double cannonY = basicCannon.getY() - this.camera.getY() + this.mainView.getHeight()/2.0;
+		final double cannonX = basicCannon.getX() - this.camera.getX() + this.bufferedImage.getWidth()/2.0;
+		final double cannonY = basicCannon.getY() - this.camera.getY() + this.bufferedImage.getHeight()/2.0;
 		
 		
 		//g.fillRect((int)(cannonX-basicCannon.getWidth()/2), (int)(cannonY+basicCannon.getHeight()/2 + 10), (int)((double)basicCannon.getWidth()*(basicCannon.getHealth()/basicCannon.getMaxHealth())) , 5);
@@ -211,15 +218,13 @@ public class JavaSwingRenderer extends Renderer {
 	
 	
 
-	/* (non-Javadoc)
-	 * @see game.viewer.Renderer#update()
-	 */
 	@Override
 	public void update() {
 
 		this.graphics.dispose();
-		 this.mainView.getBufferStrategy().show();
-		
+		//this.mainView.getBufferStrategy().show();
+		this.mainView.setCurrentFrame(this.bufferedImage);
+		this.mainView.repaint();
 	}
 
 
