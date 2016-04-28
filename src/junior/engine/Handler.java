@@ -1,5 +1,10 @@
+/*package junior.engine;
 import java.awt.Graphics;
 import java.util.LinkedList;
+
+import junior.entities.GhostObject;
+import junior.entities.GraphicalObject;
+import junior.entities.PhysicalObject;
 
 public class Handler {
 
@@ -83,3 +88,4 @@ public class Handler {
 	
 
 }
+*/

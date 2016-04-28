@@ -1,7 +1,10 @@
+/*package junior.ui;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 import javax.swing.JPanel;
+
+import junior.entities.Spaceship;
 
 public class SpaceshipeJPanel extends JPanel implements KeyListener{
 	
@@ -29,3 +32,4 @@ public class SpaceshipeJPanel extends JPanel implements KeyListener{
 	}
 
 }
+*/
